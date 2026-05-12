@@ -1,0 +1,20 @@
+/*{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["node", "@playwright/test"]
+  }
+}*/
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["node", "@playwright/test"]
+  }
+}
