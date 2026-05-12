@@ -16,7 +16,7 @@ export default defineConfig({
   timeout: 30000,
 
   use: {
-    baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
+    baseURL: 'https://www.saucedemo.com',
 
     trace: 'on-first-retry',
 
