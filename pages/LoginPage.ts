@@ -23,7 +23,7 @@ export class LoginPage {
 
     async goto(): Promise<void> {
 
-        await this.page.goto('/');
+        await this.page.goto(process.env.BASE_URL!);
     }
 
     async login(user: string, pass: string): Promise<void> {
