@@ -6,7 +6,10 @@ Playwright test suite for practicing and portfolio.
 
 - `tests/` – All test files
 - `pages/` – Page Object Model classes
+- `fixtures/` – Custom test fixtures
+- `auth.setup.spec.ts` – Global authentication setup
 - `playwright.config.ts` – Playwright configuration
+
 
 ## Test Scenarios
 
@@ -14,6 +17,14 @@ Playwright test suite for practicing and portfolio.
 - ✅ Add items to cart
 - ✅ Checkout flow
 - ✅ Data-driven tests (multiple users)
+- ✅ API testing with Playwright
+
+## Features
+
+- ✅ Page Object Model for maintainable tests
+- ✅ Custom fixtures for reusable test setup  
+- ✅ Authentication setup (storage state) — login once, run many tests
+- ✅ Data-driven testing
 - ✅ API testing with Playwright
 
 ## Technologies Used
@@ -28,6 +39,7 @@ Playwright test suite for practicing and portfolio.
 ```bash
 npm install
 
+# Install Playwright browsers
 npx playwright install
 
 # Run all tests
