@@ -35,6 +35,9 @@ jobs:
       # 5. 🔐 RUN AUTH SETUP FIRST
       - name: Generate Auth State
         run: npx playwright test tests/auth.setup.spec.ts
+        env:
+        USERNAME: ${{ secrets.SWAG_USERNAME }}
+        PASSWORD: ${{ secrets.SWAG_PASSWORD }}
 
       # 6. Run tests using stored session
       - name: Run Tests
