@@ -20,13 +20,14 @@ jobs:
         run: |
           echo "SWAG_USERNAME=${{ secrets.SWAG_USERNAME }}" >> .env
           echo "SWAG_PASSWORD=${{ secrets.SWAG_PASSWORD }}" >> .env
-          
+
       - name: Debug environment variables
         run: |
           echo "USERNAME is set to: $SWAG_USERNAME"
           echo "PASSWORD length: ${#SWAG_PASSWORD}"
 
         env:
+        BASE_URL: ${{ secrets.BASE_URL }}
         SWAG_USERNAME: ${{ secrets.SWAG_USERNAME }}
         SWAG_PASSWORD: ${{ secrets.SWAG_PASSWORD }}
 
