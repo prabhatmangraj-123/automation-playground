@@ -1,6 +1,6 @@
 // tests/example.spec.ts
 
-import { test, expect } from '../fixtures/baseTest';
+import { test, expect } from '../fixtures/baseTest.js';
 
 test('user is already logged in', async ({ page }) => {
   await page.goto('/inventory.html');

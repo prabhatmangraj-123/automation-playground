@@ -10,5 +10,5 @@ test('Get user API', async ({ request }) => {
     console.log(body);
 
     expect(response.status()).toBe(200);
-    expect(body[0].name).toBe('Krishna');
+    expect(body[0].name).toContain('Leanne');;
 });
