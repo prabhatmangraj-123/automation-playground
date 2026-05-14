@@ -10,13 +10,19 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     
-    env:
-      USERNAME: ${{ secrets.SWAG_USERNAME }}
-      PASSWORD: ${{ secrets.SWAG_PASSWORD }}
+    
 
     steps:
       # 1. Checkout
       - uses: actions/checkout@v4
+      - name: Debug environment variables
+        run: |
+          echo "USERNAME is set to: $USERNAME"
+          echo "PASSWORD length: ${#PASSWORD}"
+
+        env:
+        USERNAME: ${{ secrets.SWAG_USERNAME }}
+        PASSWORD: ${{ secrets.SWAG_PASSWORD }}
 
       # 2. Node setup
       - uses: actions/setup-node@v4
