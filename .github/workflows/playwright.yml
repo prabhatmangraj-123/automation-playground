@@ -17,12 +17,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Debug environment variables
         run: |
-          echo "USERNAME is set to: $USERNAME"
-          echo "PASSWORD length: ${#PASSWORD}"
+          echo "USERNAME is set to: $SWAG_USERNAME"
+          echo "PASSWORD length: ${#SWAG_PASSWORD}"
 
         env:
-        USERNAME: ${{ secrets.SWAG_USERNAME }}
-        PASSWORD: ${{ secrets.SWAG_PASSWORD }}
+        SWAG_USERNAME: ${{ secrets.SWAG_USERNAME }}
+        SWAG_PASSWORD: ${{ secrets.SWAG_PASSWORD }}
 
       # 2. Node setup
       - uses: actions/setup-node@v4
@@ -42,15 +42,15 @@ jobs:
       - name: Generate Auth State
         run: npx playwright test tests/auth.setup.spec.ts
         env:
-        USERNAME: ${{ secrets.SWAG_USERNAME }}
-        PASSWORD: ${{ secrets.SWAG_PASSWORD }}
+        SWAG_USERNAME: ${{ secrets.SWAG_USERNAME }}
+        SWAG_PASSWORD: ${{ secrets.SWAG_PASSWORD }}
 
       # 6. Run tests using stored session
       - name: Run Tests
         run: npx playwright test
         env:
-        USERNAME: ${{ secrets.SWAG_USERNAME }}
-        PASSWORD: ${{ secrets.SWAG_PASSWORD }}
+        SWAG_USERNAME: ${{ secrets.SWAG_USERNAME }}
+        SWAG_PASSWORD: ${{ secrets.SWAG_PASSWORD }}
 
 
       # 7. Upload report
