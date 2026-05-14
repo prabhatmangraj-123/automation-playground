@@ -39,6 +39,10 @@ jobs:
       # 6. Run tests using stored session
       - name: Run Tests
         run: npx playwright test
+        env:
+        USERNAME: ${{ secrets.SWAG_USERNAME }}
+        PASSWORD: ${{ secrets.SWAG_PASSWORD }}
+
 
       # 7. Upload report
       - name: Upload Report
