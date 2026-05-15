@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/baseTest';
+import { test, expect } from '../../fixtures/baseTest';
 
 test('user adds backpack to cart', async ({ page, inventoryPage }) => {
     await page.goto('/inventory.html');
