@@ -1,20 +1,13 @@
-import { APIRequestContext } from "@playwright/test";
+import { BaseAPI } from './BaseAPI';
 
-export class UserAPI {
+export class UserAPI extends BaseAPI {
 
-    private headers = {
-        'Content-Type': 'Application/json',
-        'Accept': 'Application/json',
-        'Authorization': 'Bearer fake-token-123'
-    };
-
-    constructor(private request: APIRequestContext) {}
 
     async getUsers() {
         return this.request.get(
             'https://jsonplaceholder.typicode.com/users',
             {
-                headers: this.headers,
+                headers: this.getHeaders(),
             }
         );
     }
@@ -23,6 +16,7 @@ export class UserAPI {
         return this.request.post(
             'https://jsonplaceholder.typicode.com/users',
             {
+                headers: this.getHeaders(),
                 data: userData,
             }
         );
@@ -32,6 +26,7 @@ export class UserAPI {
         return this.request.put(
             `https://jsonplaceholder.typicode.com/users/${userId}`,
             {
+                headers: this.getHeaders(),
                 data: userData,
             }
         );
@@ -39,16 +34,10 @@ export class UserAPI {
 
     async removeUser(userID: number) {
         return this.request.delete(
-            `https://jsonplaceholder.typicode.com/${userID}`
-            );
-    }
-
-    async getHeaders() {
-        return this.request.get(
-            'https://httpbin.org/headers',
+            `https://jsonplaceholder.typicode.com/users/${userID}`,
             {
-                headers: this.headers,
+                headers: this.getHeaders(),
             }
-        );
+            );
     }
 }
